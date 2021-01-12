@@ -20,12 +20,12 @@ static int print_to_logfile(char *message, char *filename)
     {
         return LOGGING_NOT_ENABLED;
     }
-    if (message == NULL || filename == NULL) //check params
+    if (NULL == message || NULL == filename) //check params
     {
         return ERROR_NULL_PARAMETER;
     }
     file = fopen(filename, "a"); //open logfile
-    if (file == NULL)
+    if (NULL == file)
     {
         return ERROR_COULD_NOT_OPEN_FILE;
     }
@@ -126,7 +126,7 @@ void u_disable_logging()
     {
         //log it to file
         file = fopen(log_filename, "a");
-        if (file != NULL)
+        if (NULL != file)
         {
             fprintf(file, "logging disabled");
         }
