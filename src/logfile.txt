@@ -1,5 +1,0 @@
-Logging enabled
-TEST FAILED: Test false
-Debería salir este mensaje
-TEST PASSED: Test true
-logging disabled

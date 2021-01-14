@@ -111,7 +111,7 @@ int u_enable_logging(char *filename)
         return ERROR_COULD_NOT_OPEN_FILE;
     }
 
-    fprintf(file, "Logging enabled\n");
+    fprintf(stdout, "Logging enabled on file: \"%s\"\n", filename);
     fclose(file);
     return 0;
 }
@@ -124,11 +124,13 @@ void u_disable_logging()
     FILE *file;
     if (enable_log)
     {
+        #if 0
         //log it to file
         file = fopen(log_filename, "a");
         if (NULL != file)
+        #endif
         {
-            fprintf(file, "logging disabled");
+            fprintf(stdout, "logging disabled");
         }
         //Disable logging
         enable_log = false;
